@@ -16,3 +16,10 @@ You can find the source code for Jekyll at GitHub:
 
 
 [jekyll-organization]: https://github.com/jekyll
+
+链爪
+“路霸”向目标扔出铁链；如果击中目标，就会把目标拉回来。
+给盾
+先知、查莉娅、布丽吉特
+
+
