@@ -15,10 +15,10 @@ layout: home
 - 架构：游戏中各系统的交互关系。比如在回合制战斗游戏中，可能会将50%的攻击力分给等级，将45%的攻击力分给装备，最后5%分给羁绊，这就是一种架构，决定了各个系统对总攻击力的贡献。
 
 全部
-<ul>
+<ol>
   {% for post in site.posts %}
     <li>
       <a href="{{ post.url }}">{{ post.title }}</a>
     </li>
   {% endfor %}
-</ul>
+</ol>
