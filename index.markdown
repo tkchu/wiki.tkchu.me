@@ -14,7 +14,7 @@ layout: home
 {% assign today = site.time | date: '%s' %}
 {% assign start = '01-09-2020 00:00:00' | date: '%s' %}
 {% assign secondsSince = today | minus: start %}
-{% assign daysSince = hoursSince | divided_by: 24 | divided_by: 60 | divided_by: 60 %}
+{% assign daysSince = secondsSince | divided_by: 24 | divided_by: 60 | divided_by: 60 %}
 
 {% assign counter = 0 %}
 {% for post in site.posts %}
