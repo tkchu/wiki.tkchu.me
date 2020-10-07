@@ -11,7 +11,20 @@ layout: home
 - 系统：游戏中带有积累的成长性部分。路霸可能有各种各样的皮肤，需要玩家开箱子获得。皮肤及其获取可以视为一个皮肤系统。它通常需要玩家多日的参与，通过完成一个个子目标来达成最终目标。
 - 架构：游戏中各系统的交互关系。比如在回合制战斗游戏中，可能会将50%的攻击力分给等级，将45%的攻击力分给装备，最后5%分给羁绊，这就是一种架构，决定了各个系统对总攻击力的贡献。
 
-全部
+{% assign today = site.time | date: '%s' %}
+{% assign start = '01-09-2020 00:00:00' | date: '%s' %}
+{% assign secondsSince = today | minus: start %}
+{% assign daysSince = hoursSince | divided_by: 24 | divided_by: 60 | divided_by: 60 %}
+
+{% assign counter = 0 %}
+{% for post in site.posts %}
+{% unless item.published == false %}{% assign counter=counter | plus:1 %}{% endunless %}
+{% endfor %}
+
+{% assign needToWrite = daysSince | minus: counter %}
+
+{{counter}} / {{daysSince}} = {{ needToWrite }}
+
 <ol>
   {% for post in site.posts %}
     <li>
