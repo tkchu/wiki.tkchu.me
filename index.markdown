@@ -23,7 +23,16 @@ layout: home
 
 {% assign needToWrite = daysSince | minus: counter %}
 
-{{counter}} / {{daysSince}} = {{ needToWrite }}
+<table>
+  <tr><th>已写</th><th>需写</th><th>待写</th></tr>
+  <tr><td>{{counter}}</td><td>{{daysSince}}</td><td>{{needToWrite}}</td></tr>
+</table>
+
+<ul>
+{% for cat in site.categories %}
+    <li>{{ cat[0] }} ({{ cat[1].size }})</li>
+{% endfor %}
+</ul>
 
 <ol>
   {% for post in site.posts %}
@@ -33,22 +42,3 @@ layout: home
   {% endfor %}
 </ol>
 
----
-
-<div id="archives">
-{% for category in site.categories %}
-  <div class="archive-group">
-    {% capture category_name %}{{ category | first }}{% endcapture %}
-    <div id="#{{ category_name | slugize }}"></div>
-    <p></p>
-
-    <h3 class="category-head">{{ category_name }}</h3>
-    <a name="{{ category_name | slugize }}"></a>
-    {% for post in site.categories[category_name] %}
-    <article class="archive-item">
-      <h4><a href="{{ site.baseurl }}{{ post.url }}">{{post.title}}</a></h4>
-    </article>
-    {% endfor %}
-  </div>
-{% endfor %}
-</div>
