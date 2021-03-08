@@ -1,25 +1,75 @@
----
-permalink: /404.html
-layout: default
----
+<!DOCTYPE html>
+<html lang="zh">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 假装这里有个手误, Don't panic -->
+    <title>无主之地！！1</title>
+    <style>
 
-<style type="text/css" media="screen">
-  .container {
-    margin: 10px auto;
-    max-width: 600px;
-    text-align: center;
-  }
-  h1 {
-    margin: 30px 0;
-    font-size: 4em;
-    line-height: 1;
-    letter-spacing: -1px;
-  }
-</style>
+      body{
+        background-color: #ddd;
+      }
+      .center{
+        text-align: center;
+      }
+      .big-error{
+        font-size: 20em;
+        font-weight: bolder;
+        margin-bottom: 0;
+      }
+      .goBackButton{
+        border: 3px #000 solid;
+        border-radius: 1em;
+        font-size: 3em;
+        padding: 0.3em 8em;
 
-<div class="container">
-  <h1>404</h1>
+        transition: background-color 1s;
+        -moz-transition: background-color 1s; /* Firefox 4 */
+        -webkit-transition: background-color 1s; /* Safari and Chrome */
+        -o-transition: background-color 1s; /* Opera */
+      }
+      .goBackButton:hover{
+        background-color: #fff;
+      }
 
-  <p><strong>Page not found :(</strong></p>
-  <p>The requested page could not be found.</p>
-</div>
+    </style>
+  </head>
+  <body>
+    <div class="center">
+      <h1 class="big-error">404</h1>
+      <input class="goBackButton" type="button" name="Submit" onclick="javascript:history.back(-1);" value="点击这里返回">
+    </div>
+  </body>
+</html>
+
+<script type="text/javascript">
+
+window.onload = function(){
+    var url_now = window.location.href;
+    var url_list = url_now.split('#');
+    var url = url_list[0];
+    if(url_list.length == 1){
+        window.location.replace(url + '#');
+    }
+    var append_list = [ "(╯‵口′)╯┻━┻···········(0口0)",
+                        "(╯‵口′)╯··┻━┻·········(0口0)",
+                        "(╯‵口′)╯····┻━┻·······(0口0)",
+                        "(╯‵口′)╯······┻━┻·····(0口0)",
+                        "(╯‵口′)╯········┻━┻···(0口0)",
+                        "(╯‵口′)╯··········┻━┻·(0口0)",
+                        "(╯‵口′)╯···········┻━┻(>口<)",
+                        "(╯‵口′)╯···········┯━┯(-_-#)",
+                        "(╯‵口′)╯···········┯━┯(-_-#)",
+                        ];
+    var append_list_iter = 0;
+    setInterval(function() {
+        append_list_iter += 1;
+        if (append_list_iter == append_list.length) {
+            append_list_iter = 0;
+        };
+        window.location.replace(url +"#" + append_list[append_list_iter]);
+    },1000);
+}
+</script>
