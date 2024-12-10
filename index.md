@@ -23,11 +23,6 @@ layout: home
 
 {% assign needToWrite = daysSince | minus: counter %}
 
-<table>
-  <tr><th>已写</th><th>需写</th><th>待写</th></tr>
-  <tr><td>{{counter}}</td><td>{{daysSince}}</td><td>{{needToWrite}}</td></tr>
-</table>
-
 <ul>
 {% for cat in site.categories %}
     <li>{{ cat[0] }} ({{ cat[1].size }})</li>
