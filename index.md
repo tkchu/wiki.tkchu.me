@@ -18,7 +18,7 @@ layout: home
 
 {% assign counter = 0 %}
 {% for post in site.posts %}
-{% unless item.published == false %}{% assign counter=counter | plus:1 %}{% endunless %}
+{% unless post.published == false %}{% assign counter=counter | plus:1 %}{% endunless %}
 {% endfor %}
 
 {% assign needToWrite = daysSince | minus: counter %}
